@@ -23,6 +23,14 @@ Observe overwrite:
 Kill process if no sniff count is provided (infinite packets):
 # ps aux | grep "sudo python3 spoof_source_ip_address.py" | grep -v grep | awk {'print $2'} | sudo xargs kill -9
 
+Send packets:
+* ping <destination_address> # ICMP
+# 1 packets transmitted, 1 received, 0% packet loss, time 0ms
+# rtt min/avg/max/mdev = 0.234/0.234/0.234/0.000 ms
+
+* nmap -sP <destination_address> -oX -
+# <host><status state="up" reason="conn-refused" reason_ttl="0"/>
+# <address addr="<destination_address>" addrtype="ipv4"/>
 """
 
 interface="<interface_name>"
